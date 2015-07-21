@@ -43,7 +43,7 @@ public class LogInTestRU {
     public void regidtrationEmail() {
         LoginForm loginForm = home.clickEnterButton();
         loginForm.clearField();
-        loginForm.setRegistrationData("yavlanskiy@gmail.com", "");
+        loginForm.setRegistrationData("test.yav@gmail.com", "");
         assertEquals("Это поле должно быть заполнено",
                 driver.findElement(By.cssSelector("ul.error_list > li"))
                         .getText());
@@ -56,7 +56,7 @@ public class LogInTestRU {
     public void regidtrationPass() {
         LoginForm loginForm = home.clickEnterButton();
         loginForm.clearField();
-        loginForm.setRegistrationData("", "maxim198993");
+        loginForm.setRegistrationData("", "test198993");
         assertEquals("Это поле должно быть заполнено",
                 driver.findElement(By.cssSelector("ul.error_list > li"))
                         .getText());
@@ -68,7 +68,7 @@ public class LogInTestRU {
     public void regidtrationValidAccount() {
         LoginForm loginForm = home.clickEnterButton();
         loginForm.clearField();
-        loginForm.setRegistrationData("yavlanskiy@gmail.com", "maxim198993");
+        loginForm.setRegistrationData("test.yav@gmail.com", "test198993");
         assertEquals("Моя цель",
                 driver.findElement(By.cssSelector("h2.dash-aside__title")).
                         getText());
