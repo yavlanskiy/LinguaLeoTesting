@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.TestData;
 
-public class LingvoLeoHomePageNotLoggedIn {
+public class LinguaLeoHomePageNotLoggedIn {
 
     private WebDriver driver;
     public static String homePage = "https://lingualeo.com/ru/";
@@ -29,13 +29,13 @@ public class LingvoLeoHomePageNotLoggedIn {
     @FindBy(id = "registerFormAgree")
     private WebElement licenseTerms;
 
-    public LingvoLeoHomePageNotLoggedIn(WebDriver driver) {
+    public LinguaLeoHomePageNotLoggedIn(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 
     public void goToMainPage(){
-        driver.get(LingvoLeoHomePageNotLoggedIn.homePage);
+        driver.get(LinguaLeoHomePageNotLoggedIn.homePage);
     }
 
     public LicenseTermsPage clickLicenseTerms(){

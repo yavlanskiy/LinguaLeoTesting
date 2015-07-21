@@ -1,7 +1,7 @@
 package test;
 
 import Page.MainPage;
-import Page.LingvoLeoHomePageNotLoggedIn;
+import Page.LinguaLeoHomePageNotLoggedIn;
 import Page.LoginForm;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,20 +15,19 @@ import static org.testng.Assert.assertEquals;
 public class LogInTestRU {
 
     private WebDriver driver;
-    LingvoLeoHomePageNotLoggedIn home;
+    LinguaLeoHomePageNotLoggedIn home;
 
     @BeforeClass
     public void setUp() {
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
-        driver.get(LingvoLeoHomePageNotLoggedIn.homePage);
+        driver.get(LinguaLeoHomePageNotLoggedIn.homePage);
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-        home = new LingvoLeoHomePageNotLoggedIn(driver);
+        home = new LinguaLeoHomePageNotLoggedIn(driver);
     }
 
     @Test
-    //заполнение пустыми полями
-    public void regidtrationEmpty() {
+    public void registrationEmpty() {
         LoginForm loginForm = home.clickEnterButton();
         loginForm.clearField();
         loginForm.setRegistrationData("", "");
@@ -39,8 +38,7 @@ public class LogInTestRU {
     }
 
     @Test
-    //заполнение логина полей
-    public void regidtrationEmail() {
+    public void registrationEmail() {
         LoginForm loginForm = home.clickEnterButton();
         loginForm.clearField();
         loginForm.setRegistrationData("test.yav@gmail.com", "");
@@ -52,8 +50,7 @@ public class LogInTestRU {
     }
 
     @Test
-    //заполнение  пароля
-    public void regidtrationPass() {
+    public void registrationPass() {
         LoginForm loginForm = home.clickEnterButton();
         loginForm.clearField();
         loginForm.setRegistrationData("", "test198993");
@@ -64,8 +61,7 @@ public class LogInTestRU {
     }
 
     @Test
-    //Заполнение правильным логином и паролем
-    public void regidtrationValidAccount() {
+    public void registrationValidAccount() {
         LoginForm loginForm = home.clickEnterButton();
         loginForm.clearField();
         loginForm.setRegistrationData("test.yav@gmail.com", "test198993");
@@ -76,7 +72,6 @@ public class LogInTestRU {
         mainPage.logOut();
     }
 
-    //Язабыл пароль
     @Test
     public void forgotPass() {
         LoginForm loginForm = home.clickEnterButton();
